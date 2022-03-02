@@ -66,7 +66,7 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -81,7 +81,6 @@ function locationSubmit(event) {
   let apiKey = "de25dd3e197480c0bde60c4912cab2ec";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeather);
-  let iconElement = document.querySelector("#icon");
 }
 
 let form = document.querySelector("#location-form");
