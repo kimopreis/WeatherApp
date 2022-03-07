@@ -1,4 +1,3 @@
-//feature 1
 let now = new Date();
 
 function formatDate(date) {
@@ -175,3 +174,5 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 displayForecast();
+
+searchLocation("Amsterdam");
