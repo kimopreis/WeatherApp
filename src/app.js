@@ -142,9 +142,15 @@ form.addEventListener("submit", locationSubmit);
 //fdinputLocation.innerHTML = input.value;
 
 function searchLocation(position) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiKey = "de25dd3e197480c0bde60c4912cab2ec";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 
+  axios.get(apiUrl).then(showWeather);
+}
+
+function searchCity(city) {
+  let apiKey = "de25dd3e197480c0bde60c4912cab2ec";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -175,4 +181,4 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 
 displayForecast();
 
-searchLocation("Amsterdam");
+searchCity("Amsterdam");
